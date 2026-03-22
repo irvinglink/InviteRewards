@@ -1,0 +1,25 @@
+Prefix: "&8[&5Amethyst&dLib&8]"
+Command_No_Exists:  "%amethystlib_prefix% &cThat command does not exists&7."
+No_Permission: "%amethystlib_prefix% &cYou do not have permission to use this command.&7."
+No_Permission_Console: "%amethystlib_prefix% &cThis action can not be performed via console&7."
+Wrong_Usage: "%amethystlib_prefix% &cWrong usage. &b%amethystlib_command_syntax%"
+Not_Enough_Arguments: "%amethystlib_prefix% &cNot enough arguments. &b%amethystlib_command_syntax%"
+Not_Use_Symbols: "%amethystlib_prefix% &cYou can not use symbols&7."
+Reload_Files: "%amethystlib_prefix% &aConfiguration files had been reloaded&7."
+Reload_File: "%amethystlib_prefix% &aConfiguration file &b%amethystlib_file_name% &ahas been reloaded&7."
+Reload_Menu: "%amethystlib_prefix% &aMenu configuration had been reloaded&7."
+Reload_Menus: "%amethystlib_prefix% &aMenus configurations had been reloaded&7."
+Menu_No_Exists: "%amethystlib_prefix% &cThat menu does not exists&7."
+Only_Numbers: "%amethystlib_prefix% &cOnly numbers are allowed&7."
+No_Colors: "%amethystlib_prefix% &cYou can not use colors&7."
+Player_Not_Found: "%amethystlib_prefix% &cPlayer not found&7."
+Player_Not_Online: "%amethystlib_prefix% &cPlayer is not online&7."
+
+Editor:
+  Suggest_Message: "%amethystlib_prefix% &7Type &bexit&7 to stop editing."
+  Edited_Message: "%amethystlib_prefix% &aThe message has been successfully edited&7."
+  Title:
+    Editing_Title: "&a&lEditing..."
+    Editing_SubTitle: "&7Type &bexit &7to stop editing."
+    Done_Title: "&a&lDone!"
+

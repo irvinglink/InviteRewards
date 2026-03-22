@@ -1,0 +1,12 @@
+storage:
+  type: YAML # MYSQL, MARIADB, SQLITE, YAML
+  sql:
+    host: localhost
+    port: 3306
+    database: amethyst
+    username: root
+    password: ""
+  yaml:
+    folder: data
+
+config_version: 1.0

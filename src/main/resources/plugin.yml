@@ -1,0 +1,7 @@
+name: AmethystLibKotlin
+version: '1.0-SNAPSHOT'
+main: com.github.irvinglink.amethystLibKotlin.AmethystLibKotlin
+api-version: '1.21'
+commands:
+  amethyst:
+    description: Amethyst main command.

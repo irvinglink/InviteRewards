@@ -1,0 +1,39 @@
+Prefix: "&8[&eInvite&dRewards&8]"
+
+Command_No_Exists: "%inviterewards_prefix% &cThat command does not exist&7."
+No_Permission: "%inviterewards_prefix% &cYou do not have permission to use this command&7."
+No_Permission_Console: "%inviterewards_prefix% &cThis action cannot be performed via console&7."
+Wrong_Usage: "%inviterewards_prefix% &cWrong usage. &b%inviterewards_command_syntax%"
+Not_Enough_Arguments: "%inviterewards_prefix% &cNot enough arguments. &b%inviterewards_command_syntax%"
+Not_Use_Symbols: "%inviterewards_prefix% &cYou cannot use symbols&7."
+Reload_Files: "%inviterewards_prefix% &aConfiguration files have been reloaded&7."
+Reload_File: "%inviterewards_prefix% &aConfiguration file &b%inviterewards_file_name% &ahas been reloaded&7."
+Reload_Menu: "%inviterewards_prefix% &aMenu configuration has been reloaded&7."
+Reload_Menus: "%inviterewards_prefix% &aMenus configurations have been reloaded&7."
+Menu_No_Exists: "%inviterewards_prefix% &cThat menu does not exist&7."
+Only_Numbers: "%inviterewards_prefix% &cOnly numbers are allowed&7."
+No_Colors: "%inviterewards_prefix% &cYou cannot use colors&7."
+Player_Not_Found: "%inviterewards_prefix% &cPlayer not found&7."
+Player_Not_Online: "%inviterewards_prefix% &cPlayer is not online&7."
+
+Invite:
+  Code_Message: "%inviterewards_prefix% &7Your invite code for &e%invite_type_id% &7is &6%code%&7. Share it with your friends!"
+  Code_Hover: "&eClick to copy &7(Type: &f%invite_type_id%&7)"
+  No_Pending_Rewards: "%inviterewards_prefix% &7You have no pending rewards."
+  Notifications_Enabled: "%inviterewards_prefix% &7Join notifications: &aEnabled"
+  Notifications_Disabled: "%inviterewards_prefix% &7Join notifications: &cDisabled"
+
+  Claim:
+    Success_Claimer: "%inviterewards_prefix% &aYou joined via &e%inviterewards_target_name%&a's invite!"
+    Success_Inviter: "%inviterewards_prefix% &e%inviterewards_target_name% &ajoined using your invite code!"
+    Invalid_Code: "%inviterewards_prefix% &cThat invite code does not exist&7."
+    Already_Claimed: "%inviterewards_prefix% &cYou have already claimed an invitation&7."
+    Self_Invite: "%inviterewards_prefix% &cYou cannot use your own invite code&7."
+    Not_Registered: "%inviterewards_prefix% &cYou are not registered yet.&7."
+    Suspicious: "%inviterewards_prefix% &cYour invitation could not be processed&7."
+
+  Leaderboard:
+    Header: "%inviterewards_prefix% &7--- &eGlobal Leaderboard &7---"
+    Entry: "&8#%inviterewards_value% &e%inviterewards_target_name% &7— &e%inviterewards_target_total_invites% invites &7(&e%inviterewards_target_points% points&7)"
+    Empty: "%inviterewards_prefix% &cNo leaderboard data available yet&7."
+    Player_Rank: "%inviterewards_prefix% &7Your current rank: &a#%inviterewards_player_leaderboard_rank%"

@@ -1,0 +1,82 @@
+menu:
+  title: "&d&lPending &e&lRewards"
+
+items:
+  border:
+    material: "GRAY_STAINED_GLASS_PANE"
+    name: "&r"
+    lore: []
+
+  inviter_claim:
+    material: "EMERALD"
+    name: "&a&lClaim Reward"
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP|1.0|1.2"
+    lore:
+      - "&7From: &e%claimer%"
+      - "&7Type: &b%reward_type%"
+      - "&7Claimed: &f%claimed_at%"
+      - ""
+      - "&eClick to claim this reward."
+
+  inviter_milestone:
+    material: "NETHER_STAR"
+    name: "&6&lMilestone Reward &7(Tier %tier%)"
+    sound: "UI_TOAST_CHALLENGE_COMPLETE|1.0|1.0"
+    lore:
+      - "&7From: &e%claimer%"
+      - "&7Type: &b%reward_type%"
+      - "&7Claimed: &f%claimed_at%"
+      - ""
+      - "&eClick to claim this reward."
+
+  claim_all:
+    material: "CHEST"
+    name: "&a&lClaim All Rewards"
+    sound: "ENTITY_PLAYER_LEVELUP|1.0|1.0"
+    lore:
+      - "&7Claim all your pending rewards at once."
+      - "&7Current total: &e%total_rewards%"
+      - ""
+      - "&eClick to claim all."
+
+  previous:
+    material: "ARROW"
+    name: "&e&lPrevious Page"
+    sound: "UI_BUTTON_CLICK|1.0|1.0"
+    lore:
+      - "&7Page &f%target_page% &7of &f%total_pages%"
+
+  page_info:
+    material: "PAPER"
+    name: "&ePage &f%current_page% &eof &f%total_pages%"
+    lore:
+      - "&7Total pending rewards: &e%total_rewards%"
+
+  next:
+    material: "ARROW"
+    name: "&e&lNext Page"
+    sound: "UI_BUTTON_CLICK|1.0|1.0"
+    lore:
+      - "&7Page &f%target_page% &7of &f%total_pages%"
+
+  close:
+    material: "BARRIER"
+    name: "&c&lClose"
+    sound: "BLOCK_IRON_TRAPDOOR_CLOSE|1.0|1.0"
+    lore: []
+
+  empty:
+    material: "GRAY_DYE"
+    name: "&7No Pending Rewards"
+    lore:
+      - "&7You have no pending rewards."
+
+reward-types:
+  inviter_claim: "Invite Claim"
+  inviter_milestone: "Milestone - Tier %tier%"
+
+time-format:
+  just_now: "Just now"
+  minutes: "%value%m ago"
+  hours: "%value%h ago"
+  days: "%value%d ago"

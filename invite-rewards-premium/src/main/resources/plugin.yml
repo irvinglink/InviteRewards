@@ -1,0 +1,11 @@
+name: InviteRewards
+version: '1.0-BETA'
+main: com.github.irvinglink.inviteRewards.InviteRewardsPremium
+api-version: '1.16'
+description: Premium version of InviteRewards with MySQL and Advanced Features.
+authors: [IrvingLink]
+commands:
+  inviterewards:
+    description: Invite Rewards admin command.
+  invitation:
+    description: Invitation command for players.

@@ -1,0 +1,11 @@
+name: InviteRewards
+version: '1.0-BETA'
+main: com.github.irvinglink.inviteRewards.InviteRewardsFree
+api-version: '1.16'
+description: Free version of InviteRewards.
+authors: [IrvingLink]
+commands:
+  inviterewards:
+    description: Invite Rewards admin command.
+  invitation:
+    description: Invitation command for players.

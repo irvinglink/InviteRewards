@@ -1,0 +1,183 @@
+# ╔══════════════════════════════════════════════════════╗
+# ║              InviteRewards Configuration             ║
+# ║                  VERSION: PREMIUM                    ║
+# ║  Developer: IrvingLink                               ║
+# ╚══════════════════════════════════════════════════════╝
+
+storage:
+  # Available types: YAML, SQLITE, MYSQL, MARIADB
+  type: SQLITE
+  sql:
+    host: localhost
+    port: 3306
+    database: inviterewards
+    username: root
+    password: ""
+  yaml:
+    folder: data
+
+claim-settings:
+  # GLOBAL   = a player can only claim once in total
+  # PER_TYPE = a player can claim once per invitation type
+  mode: PER_TYPE
+  # Prevent claiming your own code
+  block-self-claim: true
+  # If true, players must have joined for the first time before claiming
+  only-new-players: true
+
+anti-multiaccount:
+  enabled: true
+  # Block claim if claimer and inviter share the same IP
+  block-same-ip: true
+  # Max accounts allowed per IP before auto-flagging all of them
+  max-accounts-per-ip: 3
+
+invite-code:
+  defaults:
+    # Length of each segment in the code (e.g. 4 = "XXXX-XXXX")
+    segment-length: 4
+    # How many segments the code has
+    segments: 2
+    # Whether codes are case-sensitive when claiming
+    case-sensitive: false
+
+# Action types:
+#   [message] <text>
+#   [console] <command>
+#   [player_command] <command>
+#   [sound] <sound>|<volume>|<pitch>
+#   [action_bar] <text>
+#   [title] <title> subtitle: <subtitle>
+#   [open_menu] <menu_id>
+#   [close_menu]
+#
+# Common placeholders:
+#   %inviterewards_player_name%
+#   %inviterewards_player_points%
+#   %inviterewards_player_code%
+#   %inviterewards_player_total_invites%
+#   %inviterewards_player_has_claimed%
+#   %inviterewards_player_invited_by%
+#   %inviterewards_target_name%
+#   %inviterewards_target_points%
+#   %inviterewards_target_code%
+#   %inviterewards_target_total_invites%
+#   %inviterewards_invite_type_id%
+#   %inviterewards_invite_type_name%
+
+invite-types:
+  default:
+    enabled: true
+    display-name: "Default"
+    code:
+      mode: AUTO
+      # AUTO   = generated automatically per player
+      # MANUAL = manually assigned by admins / creators
+      segment-length: 4
+      segments: 2
+      case-sensitive: false
+    settings:
+      # Optional restrictions for this type
+      requires-permission-to-own: false
+      owner-permission: ""
+      requires-permission-to-create: false
+      creator-permission: ""
+      max-active-codes-per-player: 1
+    claim:
+      enabled: true
+      points:
+        inviter: 10
+        claimer: 5
+      inviter-actions:
+        - "[message] %inviterewards_prefix% &aYour friend &e%inviterewards_target_name% &ajoined using your code! &7(+10 points)"
+        - "[console] give %inviterewards_player_name% diamond 1"
+        - "[sound] ENTITY_PLAYER_LEVELUP|1.0|1.0"
+        - "[action_bar] &a+10 points &7— &e%inviterewards_player_total_invites% total invites"
+      claimer-actions:
+        - "[console] give %inviterewards_player_name% iron_ingot 3"
+        - "[sound] ENTITY_PLAYER_LEVELUP|1.0|1.2"
+        - "[title] &aWelcome! subtitle: &eYou joined via &6%inviterewards_target_name%&e's invite!"
+
+    milestones:
+      enabled: true
+      tiers:
+        5:
+          actions:
+            - "[console] give %inviterewards_player_name% gold_ingot 5"
+            - "[message] %inviterewards_prefix% &6Milestone! &eYou have reached &65 &einvites!"
+            - "[title] &6Milestone! subtitle: &eYou reached &65 &einvites!"
+            - "[sound] UI_TOAST_CHALLENGE_COMPLETE|1.0|1.0"
+            - "[console] broadcast &6%inviterewards_player_name% &ehas reached &65 &einvites in &b%inviterewards_invite_type_name%&e!"
+        10:
+          actions:
+            - "[console] give %inviterewards_player_name% diamond 3"
+            - "[message] %inviterewards_prefix% &bMilestone! &eYou have reached &b10 &einvites!"
+            - "[title] &bMilestone! subtitle: &eYou reached &b10 &einvites!"
+            - "[sound] UI_TOAST_CHALLENGE_COMPLETE|1.0|1.2"
+
+  streamer:
+    enabled: true
+    display-name: "Streamer"
+    code:
+      mode: MANUAL
+      # MANUAL means creator/admin defines the code
+      case-sensitive: false
+    settings:
+      # Optional restrictions for this type
+      requires-permission-to-own: true
+      owner-permission: "inviterewards.type.streamer"
+      requires-permission-to-create: true
+      creator-permission: "inviterewards.code.create.streamer"
+      max-active-codes-per-player: 1
+    claim:
+      enabled: true
+      points:
+        inviter: 25
+        claimer: 10
+      inviter-actions:
+        - "[message] %inviterewards_prefix% &dA player used your streamer code! &7(+25 points)"
+        - "[console] crate key give %inviterewards_player_name% streamer 1"
+        - "[sound] ENTITY_PLAYER_LEVELUP|1.0|0.9"
+        - "[title] &dStreamer Reward! subtitle: &fA new player joined using your code"
+      claimer-actions:
+        - "[console] give %inviterewards_player_name% diamond 2"
+        - "[console] eco give %inviterewards_player_name% 1000"
+        - "[message] %inviterewards_prefix% &aYou claimed a streamer reward from &d%inviterewards_target_name%&a!"
+        - "[sound] ENTITY_PLAYER_LEVELUP|1.0|1.2"
+    milestones:
+      enabled: true
+      tiers:
+        3:
+          actions:
+            - "[console] crate key give %inviterewards_player_name% streamer 2"
+            - "[message] %inviterewards_prefix% &dMilestone! &eYou reached &d3 &estreamer invites!"
+        10:
+          actions:
+            - "[console] give %inviterewards_player_name% netherite_ingot 2"
+            - "[console] broadcast &d%inviterewards_player_name% &ehas reached &d10 &estreamer invites!"
+
+joining-messages:
+  enabled: true
+  no-code:
+    enabled: true
+    message: "%inviterewards_prefix% &7Have an invite code? Use &b/invitation claim <type> <code> &7to get rewards!"
+    hover: "&eClick to type the command!"
+  share-code:
+    enabled: true
+    message: "%inviterewards_prefix% &7Your &e%inviterewards_invite_type_name% &7code is &6%inviterewards_player_code%&7. Share it with your friends!"
+    hover: "&eClick to copy &7(Type: &f%inviterewards_invite_type_name%&7)"
+  pending-rewards:
+    enabled: true
+    message: "%inviterewards_prefix% &eYou have &6%inviterewards_value% &epending reward(s)! &7Type &b/invitation pending &7to claim them."
+    hover: "&6&lCLICK TO OPEN MENU"
+    sound: "ENTITY_CHICKEN_EGG|1.0|1.5"
+
+leaderboard:
+  size: 50
+  # Interval in Seconds
+  refresh-interval: 600
+  # GLOBAL = sum all types
+  # PER_TYPE = separated boards by type
+  mode: GLOBAL
+
+config_version: 2.0

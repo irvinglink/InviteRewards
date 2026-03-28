@@ -1,17 +1,17 @@
 # InviteRewards 🏆
 
 ![Version](https://img.shields.io/badge/version-1.0--RELEASE-blue)
-![Platform](https://img.shields.io/badge/platform-Spigot%201.16.1-green)
+![Platform](https://img.shields.io/badge/platform-Spigot%201.16.5-green)
 ![Language](https://img.shields.io/badge/language-Kotlin-purple)
 ![License](https://img.shields.io/badge/license-MIT-yellow)
 
-**InviteRewards** is a high-performance referral system for Minecraft servers, built with a modular architecture (**Core/Premium**) that enables full scalability and advanced management of invites, rewards, and statistics.
+**InviteRewards** is a high-performance referral system for Minecraft servers, built with a modular architecture (**Free/Premium**) that enables full scalability and advanced management of invites, rewards, and leaderboard.
 
 ---
 
 ## ✨ Key Features
 
-- Modular Core/Premium architecture
+- Modular Free/Premium architecture
 - Multi invite types (Global, VIP, Events)
 - Fully dynamic action system
 - Async database & leaderboard
@@ -173,9 +173,9 @@ Advanced placeholders for leaderboards and ranking systems.
 
 ## 🏗️ Architecture
 
-### Core
+### Core/Free
 - Invite system
-- YAML / SQLite storage
+- YAML/SQLite storage
 - Placeholder engine
 - Basic action system
 

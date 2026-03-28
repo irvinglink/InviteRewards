@@ -1,6 +1,6 @@
 # InviteRewards 🏆
 
-![Version](https://img.shields.io/badge/version-1.0--BETA-blue)
+![Version](https://img.shields.io/badge/version-1.0--RELEASE-blue)
 ![Platform](https://img.shields.io/badge/platform-Spigot%201.16.1-green)
 ![Language](https://img.shields.io/badge/language-Kotlin-purple)
 ![License](https://img.shields.io/badge/license-MIT-yellow)
@@ -106,9 +106,9 @@ Advanced placeholders for leaderboards and ranking systems.
 
 ---
 
-## 🆚 Free (Lite) vs Pro
+## 🆚 Free (Lite) vs Premium
 
-| Feature | Free (Lite) 🆓 | Pro 💎 |
+| Feature | Free (Lite) 🆓 | Premium 💎 |
 | :--- | :--- | :--- |
 | Invite Types | Max 1 (default only) | Unlimited (Streamer, YouTuber, Custom, etc.) |
 | Database | SQLite only | MySQL / MariaDB |
